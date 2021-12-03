@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const URL = 'http://vonatinfo.mav-start.hu/map.aspx/getData';
 const method = 'post';
 const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' };
