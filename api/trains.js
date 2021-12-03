@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 const URL = 'http://vonatinfo.mav-start.hu/map.aspx/getData';
 const method = 'post';
