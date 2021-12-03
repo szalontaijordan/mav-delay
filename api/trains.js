@@ -33,21 +33,24 @@ async function getTrains() {
         .filter(train => train.type === 'MAV');
 }
 
+function toCSV(trains) {
+    const header = Object.keys(trains[0]);
+
+    const csv = [];
+    csv.push(header.join(','));
+    trains.forEach(train => {
+        const line = header.map(key => train[key]).join(',');
+        csv.push(line);
+    });
+
+    return csv.join('\n');
+}
+
 export default async function handler(req, res) {
     const trains = await getTrains();
 
     if (req?.query?.type === 'csv') {
-        const header = Object.keys(trains[0]);
-
-        const csv = [];
-        csv.push(header.join(','));
-        trains.forEach(train => {
-            const line = header.map(key => train[key]).join(',');
-            csv.push(line);
-        });
-
-        res.type('text/csv');
-        res.send(csv.join('\n'));
+        res.send(toCSV(trains));
     } else {
         res.send(trains);
     }
