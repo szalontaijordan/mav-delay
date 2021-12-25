@@ -11,13 +11,15 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1",
+    "express": "4.17.2",
     "node-fetch": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "local": "nodemon local/server.js"
   },
   "eslintConfig": {
     "extends": [

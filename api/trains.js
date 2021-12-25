@@ -27,7 +27,8 @@ async function getTrains() {
                 lon: train['@Lon'],
                 type: train['@Menetvonal'],
                 line: train['@Line'],
-                relation: train['@Relation']
+                relation: train['@Relation'],
+                id: train['@ElviraID']
             };
         })
         .filter(train => train.type === 'MAV');
