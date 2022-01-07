@@ -64,8 +64,10 @@ const toTrains = (train) => {
     return data.filter(entry => entry.id === train.id).sort((a, b) => a.call - b.call);
 }
 
-const best = sorted.slice(0, 5).map(toTrains);
-const worst = sorted.reverse().slice(0, 5).map(toTrains);
+const top = 50;
+
+const best = sorted.slice(0, top).map(toTrains);
+const worst = sorted.reverse().slice(0, top).map(toTrains);
 
 const report = { best, worst };
 
