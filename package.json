@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "local": "nodemon local/server.js"
+    "local": "nodemon local/server.js",
+    "pref": "nodemon local/perf.js"
   },
   "eslintConfig": {
     "extends": [
